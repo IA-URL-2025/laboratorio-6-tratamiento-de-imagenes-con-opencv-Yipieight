@@ -95,11 +95,4 @@ jobs:
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         with:
-          runners: >-
-            ${{ steps.grader-grayscale.outputs.result }},
-            ${{ steps.grader-resize.outputs.result }},
-            ${{ steps.grader-blur.outputs.result }},
-            ${{ steps.grader-threshold.outputs.result }},
-            ${{ steps.grader-bc.outputs.result }},
-            ${{ steps.grader-edges.outputs.result }},
-            ${{ steps.grader-pipeline.outputs.result }}
+          runners: ${{ steps.grader-grayscale.outputs.result }},${{ steps.grader-resize.outputs.result }},${{ steps.grader-blur.outputs.result }},${{ steps.grader-threshold.outputs.result }},${{ steps.grader-bc.outputs.result }},${{ steps.grader-edges.outputs.result }},${{ steps.grader-pipeline.outputs.result }}
