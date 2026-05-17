@@ -92,6 +92,16 @@ jobs:
           timeout: 60
           max-score: 20
 
+      - name: Debug grader outputs
+        run: |
+          echo "grayscale: ${{ steps.grader-grayscale.outputs.result }}"
+          echo "resize:    ${{ steps.grader-resize.outputs.result }}"
+          echo "blur:      ${{ steps.grader-blur.outputs.result }}"
+          echo "threshold: ${{ steps.grader-threshold.outputs.result }}"
+          echo "bc:        ${{ steps.grader-bc.outputs.result }}"
+          echo "edges:     ${{ steps.grader-edges.outputs.result }}"
+          echo "pipeline:  ${{ steps.grader-pipeline.outputs.result }}"
+
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         with:
